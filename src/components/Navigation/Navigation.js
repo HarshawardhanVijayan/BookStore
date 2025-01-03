@@ -48,6 +48,10 @@ const Navigation = ({ apiKey }) => {
   // Limit the results to 3
   const limitedResults = results.slice(0, 3);
 
+  const handleNavigate = (route) => {
+    navigate(route);
+  };
+
   const handleResultClick = (bookId) => {
     setResults([]); // Clear search results when clicking a book
     navigate(`/book/${bookId}`); // Navigate to the BookDetails page
@@ -87,10 +91,10 @@ const Navigation = ({ apiKey }) => {
             </div>
           )}
         </li>
-        <li>Home</li>
-        <li>About us</li>
-        <li>Contact</li>
-        <li>Login/Signup</li>
+        <li onClick={() => handleNavigate("/")}>Home</li>
+        <li onClick={() => handleNavigate("/aboutus")}>About us</li>
+        <li onClick={() => handleNavigate("/contact")}>Contact</li>
+        <li onClick={() => handleNavigate("/login")}>Login/Signup</li>
       </ul>
     </div>
   );
