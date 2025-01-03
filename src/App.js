@@ -10,7 +10,7 @@ const App = () => {
 
   return (
     <Router>
-      <Navigation />
+      <Navigation apiKey={apiKey}/>
       <Routes>
         <Route path="/" element={<Hero apiKey={apiKey} />} />
         <Route path="/book/:id" element={<BookDetails />} />
