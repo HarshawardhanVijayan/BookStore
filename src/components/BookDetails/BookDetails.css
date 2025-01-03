@@ -1,37 +1,141 @@
-.book-details {
-    padding: 20px;
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7f6; /* Light neutral background */
+    color: #333; /* Dark gray text for good contrast */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .book-details {
     max-width: 800px;
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
   }
   
-  .book-details img {
-    max-width: 200px;
-    margin: 20px 0;
-  }
-  
-  .book-details h1 {
-    font-size: 2rem;
+  /* Header Styles */
+  .book-title {
+    font-size: 2.5rem;
+    color: #2c3e50; /* Deep blue for trust and calm */
     margin-bottom: 10px;
   }
   
-  .book-details h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+  .book-author {
+    font-size: 1.2rem;
+    color: #7f8c8d; /* Slight gray for the author */
+    margin-bottom: 20px;
   }
   
-  .book-details p {
-    font-size: 1.1rem;
-    line-height: 1.6;
+  /* Image Styles */
+  .book-cover {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    display: block;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  .book-details a {
+  /* Book Info Section */
+  .book-info p {
     font-size: 1rem;
-    color: #007bff;
-    text-decoration: none;
+    color: #34495e; /* Muted dark gray for secondary text */
+    margin: 8px 0;
   }
   
-  .book-details a:hover {
-    text-decoration: underline;
+  /* Awards Section */
+  .awards {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #ecf0f1; /* Light gray background for awards */
+    border-radius: 5px;
   }
+  
+  .awards h4 {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  .awards ul {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  
+  .awards ul li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #2980b9; /* Blue color for list items */
+  }
+  
+  /* Description Section */
+  .book-description {
+    margin-top: 30px;
+    line-height: 1.6;
+    color: #34495e;
+  }
+  
+  .book-description p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+  
+  .book-description h4 {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+  }
+  
+  /* More Details Link */
+  .book-more-link {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .more-details-link {
+    text-decoration: none;
+    color: #2980b9; /* Bright blue for links */
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .more-details-link:hover {
+    color: #1abc9c; /* Light green hover for an interactive feel */
+  }
+  
+  /* Loading/Error States */
+  .loading, .error {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #e74c3c; /* Red for error state */
+    padding: 20px;
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .book-description-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #34495e;
+    margin-bottom: 15px;
+  }
+  .book-description-text em {
+    font-style: italic;
+    color: #2980b9;
+  }
+  .book-description-text strong {
+    font-weight: bold;
+  }
+  
   

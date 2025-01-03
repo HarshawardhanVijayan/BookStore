@@ -13,7 +13,7 @@ const App = () => {
       <Navigation apiKey={apiKey}/>
       <Routes>
         <Route path="/" element={<Hero apiKey={apiKey} />} />
-        <Route path="/book/:id" element={<BookDetails />} />
+        <Route path="/book/:id" element={<BookDetails apiKey={apiKey}/>} />
       </Routes>
     </Router>
   );

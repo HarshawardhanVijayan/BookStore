@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import './Navigation.css';
 
 const BookstoreIcon = () => (
@@ -16,9 +17,10 @@ const BookstoreIcon = () => (
   </svg>
 );
 
-const Navigation = ({apiKey}) => {
+const Navigation = ({ apiKey }) => {
   const [search, setSearch] = useState("");
   const [results, setResults] = useState([]);
+  const navigate = useNavigate(); // Hook for navigation
 
   const handleSearch = async (event) => {
     const query = event.target.value;
@@ -46,6 +48,12 @@ const Navigation = ({apiKey}) => {
   // Limit the results to 3
   const limitedResults = results.slice(0, 3);
 
+  const handleResultClick = (bookId) => {
+    setResults([]); // Clear search results when clicking a book
+    navigate(`/book/${bookId}`); // Navigate to the BookDetails page
+    setSearch('')
+  };
+
   return (
     <div className="nav">
       <ul className="nav-list">
@@ -64,7 +72,11 @@ const Navigation = ({apiKey}) => {
             <div className="search-results">
               <ul>
                 {limitedResults.map((book) => (
-                  <li key={book.id} className="search-result-item">
+                  <li
+                    key={book.id}
+                    className="search-result-item"
+                    onClick={() => handleResultClick(book.id)} // Handle click to navigate to book details
+                  >
                     <span className="book-title">{book.volumeInfo.title}</span>
                     <p className="book-author">
                       {book.volumeInfo.authors ? book.volumeInfo.authors.join(', ') : 'Unknown Author'}
