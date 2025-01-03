@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { motion } from 'framer-motion'; // Import framer-motion for animations
 import { Link } from 'react-router-dom'; // Import Link for navigation
 import './Hero.css'; // Import the corresponding CSS
@@ -9,8 +9,8 @@ const Hero = ({ apiKey }) => {
   const [query, setQuery] = useState('fiction'); // Default genre query
   const [error, setError] = useState(null);
 
-  // Function to fetch books based on the genre (query)
-  const fetchBooks = async (categoryQuery) => {
+  // Memoize the fetchBooks function to avoid re-creating it on each render
+  const fetchBooks = useCallback(async (categoryQuery) => {
     setLoading(true);
     setError(null);
     try {
@@ -30,12 +30,12 @@ const Hero = ({ apiKey }) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [apiKey]); // Dependencies for useCallback, only recreate fetchBooks when apiKey changes
 
   // Fetch books when the genre changes
   useEffect(() => {
     fetchBooks(query);
-  }, [query]);
+  }, [query, fetchBooks]); // Now fetchBooks is stable and included in the dependencies
 
   // Genres to display for selection
   const genres = [
