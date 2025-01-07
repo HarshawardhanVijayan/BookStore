@@ -14,14 +14,14 @@ const App = () => {
 
   return (
     <Router>
-      {/* <Navigation apiKey={apiKey} /> */}
-      {/* <Routes>
+      <Navigation apiKey={apiKey} />
+      <Routes>
         <Route path="/" element={<Hero apiKey={apiKey} />} />
         <Route path="/book/:id" element={<BookDetails apiKey={apiKey} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-      </Routes> */}
-      <User apiKey={apiKey}/>
+      </Routes>
+      {/* <User apiKey={apiKey}/> */}
     </Router>
   );
 };
