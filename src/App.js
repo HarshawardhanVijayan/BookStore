@@ -6,8 +6,6 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Navigation from './components/Navigation/Navigation';
 import './App.css';
-import WelcomePage from './components/Welcome/Welcome';
-import User from './components/User/User';
 
 const App = () => {
   const apiKey = process.env.REACT_APP_GOOGLE_BOOK_API_KEY;
