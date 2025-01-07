@@ -35,6 +35,7 @@ const Hero = ({ apiKey }) => {
   // Fetch books when the genre changes
   useEffect(() => {
     fetchBooks(query);
+    window.scrollTo(0, 0);  // Scroll to the top when the component mounts
   }, [query, fetchBooks]); // Now fetchBooks is stable and included in the dependencies
 
   // Genres to display for selection
